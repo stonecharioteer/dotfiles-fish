@@ -1,8 +1,6 @@
 # fish_add_path /usr/local/pgsql/bin/
 fish_add_path /home/stonecharioteer/.local/bin
 fish_add_path /home/stonecharioteer/.cargo/bin
-# Install rvm from https://rvm.io/
-fish_add_path /home/stonecharioteer/.rvm/bin
 fish_add_path /usr/local/go/bin
 #fish_add_path /home/stonecharioteer/code/tools/node/bin
 #fish_add_path /home/stonecharioteer/code/tools/redis/src/
@@ -237,9 +235,5 @@ fundle init
 # export WASMER_DIR="/home/stonecharioteer/.wasmer"
 # [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 alias hadolint='docker run --rm -i hadolint/hadolint < $1'
-
-
-# load_nvm >> /dev/null
-# rvm use ruby >> /dev/null
 export ANSIBLE_DEPRECATION_WARNINGS=0
 export HISTCONTROL=ignoreboth:erasedups # ignore any commands which have a space in the beginning when writing to history
