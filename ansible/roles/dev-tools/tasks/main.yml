@@ -174,14 +174,19 @@
     HOME: "{{ fish_home }}"
   ignore_errors: yes
 
-- name: Install uv Python package manager via mise
+- name: Check if uv is already installed
+  command: which uv
+  register: uv_exists
+  ignore_errors: yes
+  become: no
+
+- name: Install uv Python package manager via official installer
   shell: |
-    "{{ fish_home }}/.local/bin/mise" install uv@latest
-    "{{ fish_home }}/.local/bin/mise" global uv@latest
+    curl -LsSf https://astral.sh/uv/install.sh | sh
   environment:
     HOME: "{{ fish_home }}"
   become: no
-  ignore_errors: yes
+  when: uv_exists.rc != 0
 
 - name: Ensure mise is in PATH for fish shell
   lineinfile:
