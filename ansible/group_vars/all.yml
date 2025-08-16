@@ -46,7 +46,6 @@ mise_runtimes:
   - python@latest
   - go@latest
   - rust@latest
-  - uv@latest
 
 # Rust CLI tools to install via cargo-binstall
 rust_cli_tools:
