@@ -6,6 +6,7 @@ if status is-interactive
     zoxide init fish | source
     fish_vi_key_bindings
     fx --comp fish | source
+    source $HOME/.local/bin/env.fish
 end
 
 # alias rm='echo \'Don\'t do zat.\''

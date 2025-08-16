@@ -1,0 +1,70 @@
+---
+# Global variables for all fish machines
+fish_user: stonecharioteer
+fish_home: "/home/{{ fish_user }}"
+
+# Essential build tools (installed via package manager)
+build_tools:
+  debian:
+    - build-essential
+    - pkg-config
+    - libssl-dev
+    - bison
+    - flex
+    - make
+    - cmake
+    - autoconf
+    - automake
+    - libtool
+  arch:
+    - base-devel
+    - openssl
+    - pkg-config
+    - bison
+    - flex
+    - make
+    - cmake
+    - autoconf
+    - automake
+    - libtool
+  fedora:
+    - gcc
+    - gcc-c++
+    - make
+    - cmake
+    - autoconf
+    - automake
+    - libtool
+    - pkg-config
+    - openssl-devel
+    - bison
+    - flex
+
+# Runtime versions managed by mise
+mise_runtimes:
+  - node@lts
+  - python@latest
+  - go@latest
+  - rust@latest
+  - uv@latest
+
+# Rust CLI tools to install via cargo-binstall
+rust_cli_tools:
+  - ripgrep      # rg - better grep
+  - fd-find      # fd - better find  
+  - tokei        # code statistics
+  - bat          # better cat with syntax highlighting
+  - du-dust      # dust - better du
+  - bottom       # btm - better top
+  - xh           # better curl/httpie
+  - starship     # cross-shell prompt
+  - atuin        # shell history management
+  - zoxide       # smart cd
+  - lsd          # better ls
+
+# Modern CLI tools that might be available via package manager
+system_cli_tools:
+  - fzf          # fuzzy finder
+  - git          # version control
+  - curl         # http client
+  - wget         # download tool
