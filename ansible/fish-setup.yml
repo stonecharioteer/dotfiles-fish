@@ -1,0 +1,33 @@
+---
+- name: Complete Fish Shell Environment Setup
+  hosts: fish_machines
+  become: yes
+  vars:
+    fish_user: "{{ ansible_user | default('stonecharioteer') }}"
+    fish_home: "/home/{{ fish_user }}"
+    
+  roles:
+    - fish-shell
+    - dev-tools
+    - rust-toolchain
+    - fish-config
+
+  post_tasks:
+    - name: Display setup completion message
+      debug:
+        msg: |
+          Fish shell setup completed successfully!
+          
+          Installed components:
+          - Fish shell with modern CLI tools
+          - Essential build tools (build-essential, pkg-config, bison, etc.)
+          - mise (runtime version manager) with Node.js, Python, Go, Rust
+          - Rust toolchain with cargo-binstall
+          - CLI utilities: ripgrep, fd, tokei, bat, du-dust, bottom, xh
+          - Complete Fish configuration with abbreviations
+          - Modern shell integrations: starship, atuin, zoxide, fzf
+          
+          Next steps:
+          1. Log out and log back in
+          2. Fish shell will be your default shell
+          3. Run 'source ~/.config/fish/config.fish' to activate configuration
