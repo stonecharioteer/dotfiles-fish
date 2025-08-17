@@ -10,3 +10,4 @@ if status is-interactive
 end
 
 # alias rm='echo \'Don\'t do zat.\''
+fish_add_path /home/stonecharioteer/code/checkouts/personal/scripts

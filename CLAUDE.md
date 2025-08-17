@@ -6,6 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Fish shell configuration repository containing personal dotfiles and customizations. The configuration sets up an enhanced shell environment with modern CLI tools, vi key bindings, and custom abbreviations.
 
+## Installation
+
+**Important**: This repository contains only the Fish shell configuration files. For automated installation of Fish shell, modern CLI tools, and these configurations, use the [stonecharioteer/distributed-dotfiles](https://github.com/stonecharioteer/distributed-dotfiles) repository instead.
+
+The distributed-dotfiles repository (located at `~/code/checkouts/personal/distributed-dotfiles`) provides comprehensive setup automation including:
+- Fish shell installation and configuration
+- Modern CLI tools (ripgrep, fd, bat, starship, atuin, zoxide, mise, etc.)
+- Development toolchains (Rust, Python, Node.js)
+- Cross-platform deployment capabilities
+
 ## Architecture
 
 ### Configuration Structure
