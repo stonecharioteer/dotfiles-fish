@@ -58,4 +58,5 @@ abbr -a -- trash-list uvx --from trash-cli trash-list
 abbr -a -- trash-put  uvx --from trash-cli trash-put 
 abbr -a -- trash-restore uvx --from trash-cli trash-restore
 abbr -a -- trash-rm uvx --from trash-cli trash-rm
+abbr -a -- docker-compose docker compose
 
