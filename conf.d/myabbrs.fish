@@ -16,7 +16,12 @@ abbr -a -- lt lsd --tree
 abbr -a B --position anywhere --set-cursor "% | bat"
 abbr -a E --position anywhere --set-cursor "% 2>&1"
 abbr -a cheat --set-cursor "curl cht.sh/%"
-abbr -a C --position anywhere --set-cursor "% | xclip -selection clipboard"
+# OS-dependent clipboard abbreviation
+if test (uname) = Darwin
+    abbr -a C --position anywhere --set-cursor "% | pbcopy"
+else
+    abbr -a C --position anywhere --set-cursor "% | xclip -selection clipboard"
+end
 abbr -a -- trash  uvx --from trash-cli trash-put 
 abbr -a -- trash-empty uvx --from trash-cli trash-empty
 abbr -a -- trash-list uvx --from trash-cli trash-list
