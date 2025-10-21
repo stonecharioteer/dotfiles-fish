@@ -4,10 +4,40 @@ abbr -a -- ta tmux -u attach
 abbr -a -- tns tmux -u new -s
 abbr -a -- g git
 abbr -a -- ga git add
-abbr -a -- gp git pull
+abbr -a -- gaa git add --all
+abbr -a -- gap git add --patch
+abbr -a -- gb git branch
+abbr -a -- gba git branch -a
+abbr -a -- gbd git branch -d
+abbr -a -- gc git commit
+abbr -a -- gcm git commit -m
+abbr -a -- gca git commit --amend
 abbr -a -- gco git checkout
-abbr -a -- gss git status -s
+abbr -a -- gcb git checkout -b
+abbr -a -- gd git diff
+abbr -a -- gds git diff --staged
+abbr -a -- gf git fetch
+abbr -a -- gl git log
 abbr -a -- glop git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+abbr -a -- gm git merge
+abbr -a -- gp git pull
+abbr -a -- gpr git pull --rebase
+abbr -a -- gps git push
+abbr -a -- gpf git push --force-with-lease
+abbr -a -- gr git remote
+abbr -a -- grv git remote -v
+abbr -a -- grb git rebase
+abbr -a -- grbi git rebase -i
+abbr -a -- grs git restore
+abbr -a -- grss git restore --staged
+abbr -a -- gs git status
+abbr -a -- gss git status -s
+abbr -a -- gst git stash
+abbr -a -- gsta git stash apply
+abbr -a -- gstp git stash pop
+abbr -a -- gstl git stash list
+abbr -a -- gsw git switch
+abbr -a -- gswc git switch -c
 abbr -a -- l lsd
 abbr -a -- la lsd -a
 abbr -a -- ll lsd -l

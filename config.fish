@@ -9,6 +9,9 @@ if status is-interactive
     source $HOME/.local/bin/env.fish
 end
 
+# Aliases
+alias vim='nvim'
 # alias rm='echo \'Don\'t do zat.\''
+
 fish_add_path $HOME/code/checkouts/personal/scripts
 fish_add_path $HOME/.cargo/bin
