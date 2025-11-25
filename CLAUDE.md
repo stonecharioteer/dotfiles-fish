@@ -21,12 +21,15 @@ The distributed-dotfiles repository (located at `~/code/checkouts/personal/distr
 ### Configuration Structure
 - `config.fish` - Main configuration file that initializes interactive sessions
 - `conf.d/` - Configuration directory with modular setup files
-  - `myabbrs.fish` - Custom command abbreviations
+  - `myabbrs.fish` - Custom command abbreviations (git, tmux, lsd, trash-cli, cross-platform clipboard)
   - `rustup.fish` - Rust toolchain configuration
   - `uv.env.fish` - UV Python package manager environment
+  - `linux.fish` - Linux-specific paths and environment variables (Go, Java, Ansible, kubectl/krew)
+  - `sway.fish` - Auto-start Sway window manager on TTY1 (Linux only)
 - `functions/` - Custom Fish functions
-  - `fish_user_key_bindings.fish` - FZF integration for key bindings
-  - `disable_laptop_keeb.fish` - Utility to disable laptop keyboard via xinput
+  - `fish_user_key_bindings.fish` - FZF integration using modern `fzf --fish` syntax
+  - `disable_laptop_keeb.fish` - Utility to disable laptop keyboard via xinput (Linux only)
+  - `fisher.fish` - Fisher plugin manager
 - `fish_variables` - Fish universal variables (colors, paths, editor settings)
 
 ### Tool Integration
@@ -66,3 +69,34 @@ abbr -l
 ### Important Paths
 - User binaries: `~/.cargo/bin`, `~/.fzf/bin` (fish_variables:34)
 - External environment: `~/.local/bin/env.fish` (sourced in config.fish:9)
+
+## Cross-Platform Support
+
+This configuration is designed to work on both macOS and Linux systems:
+
+- **Clipboard operations**: Automatically uses `pbcopy` on macOS and `xclip` on Linux (via the `C` abbreviation)
+- **Linux-specific features**: Only load on Linux systems (Sway auto-start, xinput keyboard disable, Linux paths)
+- **Platform detection**: Uses `test (uname) = Linux` or `test (uname) = Darwin` for conditional loading
+
+## Migration History
+
+### November 2025 - Removed Nested Config Directory
+
+**Issue**: A nested `fish/` directory existed within `~/.config/fish/` containing an older configuration that caused errors with deprecated FZF syntax (`fzf_key_bindings` using old `bind -k` syntax).
+
+**Old nested config contained**:
+- Deprecated `fzf_key_bindings` function with old bind syntax (line 214 of nested config.fish)
+- Old-style bash/zsh-inspired git aliases (replaced by modern Fish abbreviations)
+- Exa aliases (replaced by lsd abbreviations in myabbrs.fish)
+- Linux-specific configurations without platform detection (hard-coded `/home/stonecharioteer/` paths)
+- Fundle plugin manager (replaced by Fisher)
+- Environment variables: `PYTHONDONTWRITEBYTECODE`, `JAVA_HOME`, `ANSIBLE_DEPRECATION_WARNINGS`, `ANSIBLE_NOCOWS`, `HISTCONTROL`
+
+**Migration actions**:
+1. Extracted useful Linux-specific configurations into `conf.d/linux.fish` with proper platform detection
+2. Moved `disable_laptop_keeb.fish` function to main functions directory with Linux check
+3. Created `conf.d/sway.fish` for Sway auto-start with platform detection
+4. Removed entire nested `fish/` directory (was backed up to `fish.backup-20251125` during migration)
+5. Current config now uses modern `fzf --fish | source` syntax in `fish_user_key_bindings.fish`
+
+**Result**: Clean, cross-platform configuration that works on both macOS and Linux without errors.
