@@ -44,7 +44,8 @@ abbr -a -- ll lsd -l
 abbr -a -- lla lsd -la
 abbr -a -- lt lsd --tree
 abbr -a B --position anywhere --set-cursor "% | bat"
-abbr -a E --position anywhere --set-cursor "% 2>&1"
+abbr -a E --position anywhere --set-cursor "2>&1 "
+
 abbr -a cheat --set-cursor "curl cht.sh/%"
 # OS-dependent clipboard abbreviation
 if test (uname) = Darwin
@@ -52,11 +53,36 @@ if test (uname) = Darwin
 else
     abbr -a C --position anywhere --set-cursor "% | xclip -selection clipboard"
 end
-abbr -a -- trash  uvx --from trash-cli trash-put 
+abbr -a -- trash  uvx --from trash-cli trash-put
 abbr -a -- trash-empty uvx --from trash-cli trash-empty
 abbr -a -- trash-list uvx --from trash-cli trash-list
 abbr -a -- trash-put  uvx --from trash-cli trash-put 
 abbr -a -- trash-restore uvx --from trash-cli trash-restore
 abbr -a -- trash-rm uvx --from trash-cli trash-rm
 abbr -a -- docker-compose docker compose
-
+abbr -a wtf --set-cursor -- 'lsof -i tcp:%'
+abbr -a be -- bundle exec
+abbr -a ber -- bundle exec ruby
+abbr -a yolo -- claude --dangerously-skip-permissions
+abbr -a vim -- nvim
+abbr -a -- dc docker compose
+abbr -a -- dcl docker compose logs
+abbr -a -- dclf docker compose logs -f
+abbr -a -- dclf1 docker compose logs -f --tail=100
+abbr -a -- dcu docker compose up
+abbr -a -- dcud docker compose up -d
+abbr -a -- dcudb docker compose up -d --build
+abbr -a -- dcd docker compose down
+abbr -a -- dcdn docker compose down --volumes
+abbr -a -- dcr docker compose restart
+abbr -a -- dcb docker compose build
+abbr -a -- dce docker compose exec
+abbr -a -- dcps docker compose ps
+abbr -a -- dcpa docker compose ps -a
+abbr -a -- dcpull docker compose pull
+abbr -a -- dps docker ps
+abbr -a -- dpsa docker ps -a
+abbr -a -- di docker images
+abbr -a -- drmi docker rmi
+abbr -a -- drmf docker rm -f
+abbr -a -- dprune docker system prune -af --volumes
