@@ -61,8 +61,6 @@ abbr -a -- trash-restore uvx --from trash-cli trash-restore
 abbr -a -- trash-rm uvx --from trash-cli trash-rm
 abbr -a -- docker-compose docker compose
 abbr -a wtf --set-cursor -- 'lsof -i tcp:%'
-abbr -a be -- bundle exec
-abbr -a ber -- bundle exec ruby
 abbr -a yolo -- claude --dangerously-skip-permissions
 abbr -a vim -- nvim
 abbr -a -- dc docker compose
@@ -86,3 +84,10 @@ abbr -a -- di docker images
 abbr -a -- drmi docker rmi
 abbr -a -- drmf docker rm -f
 abbr -a -- dprune docker system prune -af --volumes
+
+# Ruby specific abbreviations
+abbr -a be -- bundle exec
+abbr -a beru -- bundle exec ruby
+abbr -a -- berc bundle exec rails console
+abbr -a -- be bundle exec
+abbr -a -- osp "rm -rf ./.overmind.sock && overmind start -f Procfile.dev"
