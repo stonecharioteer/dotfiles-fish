@@ -18,7 +18,7 @@ abbr -a -- gd git diff
 abbr -a -- gds git diff --staged
 abbr -a -- gf git fetch
 abbr -a -- gl git log
-abbr -a -- glop git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+# abbr -a -- glop git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 abbr -a -- gm git merge
 abbr -a -- gp git pull
 abbr -a -- gpr git pull --rebase
@@ -86,8 +86,7 @@ abbr -a -- drmf docker rm -f
 abbr -a -- dprune docker system prune -af --volumes
 
 # Ruby specific abbreviations
-abbr -a be -- bundle exec
-abbr -a beru -- bundle exec ruby
-abbr -a -- berc bundle exec rails console
 abbr -a -- be bundle exec
+abbr -a -- beru bundle exec ruby
+abbr -a -- berc bundle exec rails console
 abbr -a -- osp "rm -rf ./.overmind.sock && overmind start -f Procfile.dev"
