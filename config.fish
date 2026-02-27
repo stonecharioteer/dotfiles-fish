@@ -12,7 +12,7 @@ if status is-interactive
     fish_vi_key_bindings
     fx --comp fish | source
     direnv hook fish | source
-    source $HOME/.local/bin/env.fish
+    test -f $HOME/.local/bin/env.fish; and source $HOME/.local/bin/env.fish
 end
 
 # opencode
