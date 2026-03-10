@@ -36,3 +36,8 @@ local.fish
 *.orig
 *~
 *.swp
+
+# ===========================================
+# Machine-specific universal variables
+# ===========================================
+fish_variables
