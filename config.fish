@@ -32,6 +32,13 @@ if test (uname) = Darwin
     set -gx LDFLAGS "-L/opt/homebrew/opt/imagemagick-full/lib"
     set -gx CPPFLAGS "-I/opt/homebrew/opt/imagemagick-full/include"
     set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/imagemagick-full/lib/pkgconfig"
+else if test (uname) = Linux
+    set -gx ANDROID_HOME $HOME/Android/Sdk
+    fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+    fish_add_path $ANDROID_HOME/platform-tools
+    set -gx JAVA_HOME /usr/lib/jvm/zulu21
 end
+
+set -gx CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 1
 
 alias glop='git log --oneline --pretty=format:"%C(auto)%h %Cgreen%ad %Cblue(%an)%Creset %s" --date=format:"%Y-%m-%d %H:%M"'
