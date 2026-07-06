@@ -24,7 +24,7 @@ The distributed-dotfiles repository (located at `~/code/checkouts/personal/distr
   - `myabbrs.fish` - Custom command abbreviations (git, tmux, lsd, trash-cli, cross-platform clipboard)
   - `rustup.fish` - Rust toolchain configuration
   - `uv.env.fish` - UV Python package manager environment
-  - `linux.fish` - Linux-specific paths and environment variables (Go, Java, Ansible, kubectl/krew)
+  - `linux.fish` - Linux-specific paths and environment variables (Go, Java, Ansible)
   - `sway.fish` - Auto-start Sway window manager on TTY1 (Linux only)
 - `functions/` - Custom Fish functions
   - `fish_user_key_bindings.fish` - FZF integration using modern `fzf --fish` syntax
@@ -87,7 +87,7 @@ This configuration is designed to work on both macOS and Linux systems:
 - Deprecated `fzf_key_bindings` function with old bind syntax (line 214 of nested config.fish)
 - Old-style bash/zsh-inspired git aliases (replaced by modern Fish abbreviations)
 - Exa aliases (replaced by lsd abbreviations in myabbrs.fish)
-- Linux-specific configurations without platform detection (hard-coded `/home/stonecharioteer/` paths)
+- Linux-specific configurations without platform detection (hard-coded home-directory paths)
 - Fundle plugin manager
 - Environment variables: `PYTHONDONTWRITEBYTECODE`, `JAVA_HOME`, `ANSIBLE_DEPRECATION_WARNINGS`, `ANSIBLE_NOCOWS`, `HISTCONTROL`
 
