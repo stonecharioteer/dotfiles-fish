@@ -9,7 +9,7 @@ if status is-interactive
     # Guards prevent tmux nesting, non-TTY hijacking, and allow opt-out with FISH_NO_AUTO_TMUX=1.
     if status is-login; and not set -q FISH_NO_AUTO_TMUX; and not set -q TMUX; and isatty stdin; and isatty stdout; and command -q tmux
         set -l scratch_dir $HOME/scratch
-        mkdir -p $scratch_dir; and exec tmux new-session -A -s scratch -c $scratch_dir
+        mkdir -p $scratch_dir; and tmux new-session -A -s scratch -c $scratch_dir
     end
 
     # Commands to run in interactive sessions can go here
