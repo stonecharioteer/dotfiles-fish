@@ -85,8 +85,12 @@ abbr -a -- drmi docker rmi
 abbr -a -- drmf docker rm -f
 abbr -a -- dprune docker system prune -af --volumes
 
-# Ruby specific abbreviations
-abbr -a -- be bundle exec
-abbr -a -- beru bundle exec ruby
-abbr -a -- berc bundle exec rails console
-abbr -a -- osp "rm -rf ./.overmind.sock && overmind start -f Procfile.dev"
+# Django specific abbreviations
+abbr -a -- dj uv run manage.py
+abbr -a -- djr uv run manage.py runserver
+abbr -a -- djs uv run manage.py shell
+abbr -a -- djmm uv run manage.py makemigrations
+abbr -a -- djm uv run manage.py migrate
+abbr -a -- djt uv run manage.py test
+abbr -a -- djcsu uv run manage.py createsuperuser
+abbr -a -- djcs uv run manage.py collectstatic

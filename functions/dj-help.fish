@@ -1,0 +1,11 @@
+function dj-help --description 'List Django fish abbreviations'
+    echo 'Django abbreviations:'
+    echo '  dj     -> uv run manage.py'
+    echo '  djr    -> uv run manage.py runserver'
+    echo '  djs    -> uv run manage.py shell'
+    echo '  djmm   -> uv run manage.py makemigrations'
+    echo '  djm    -> uv run manage.py migrate'
+    echo '  djt    -> uv run manage.py test'
+    echo '  djcsu  -> uv run manage.py createsuperuser'
+    echo '  djcs   -> uv run manage.py collectstatic'
+end
