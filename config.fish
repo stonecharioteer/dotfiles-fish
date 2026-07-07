@@ -15,6 +15,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
     atuin init fish | source
+    # zoxide expects fish's cd function to exist as a file; with embedded fish functions,
+    # copy it directly so z can still call __zoxide_cd_internal.
+    functions -q __zoxide_cd_internal; or functions --copy cd __zoxide_cd_internal
     zoxide init fish | source
     fish_vi_key_bindings
     fx --comp fish | source
