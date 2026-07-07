@@ -18,6 +18,7 @@ conf.d/fish_frozen_*.fish
 # ===========================================
 # Fish internal state
 # ===========================================
+fish_variables
 fish_history
 fishd.*
 .fish_history

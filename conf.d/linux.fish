@@ -2,7 +2,6 @@
 if test (uname) = Linux
     # Linux-specific paths
     fish_add_path /usr/local/go/bin
-    fish_add_path /home/stonecharioteer/.krew/bin
 
     # Java configuration (Arch Linux paths)
     # Uncomment and adjust version as needed:
